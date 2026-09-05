@@ -1,0 +1,72 @@
+:root {
+  color-scheme: light;
+  --ink: #172c39;
+  --muted: #526471;
+  --accent: #075e68;
+  --line: #dce5e9;
+  --tint: #f1f7f9;
+}
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body { margin: 0; background: #fff; color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 1rem; line-height: 1.7; }
+a { color: var(--accent); text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; border-radius: 2px; }
+.wrap { width: min(100% - 3rem, 68rem); margin-inline: auto; }
+.site-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.4rem; border-bottom: 1px solid var(--line); }
+.brand { font-size: 1.4rem; font-weight: 750; letter-spacing: -0.04em; color: var(--ink); text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+nav a { display: inline-block; padding-block: 0.45rem; font-size: 0.9375rem; text-decoration: none; color: var(--muted); }
+nav a:hover, nav a[aria-current="page"] { color: var(--accent); text-decoration: underline; }
+h1, h2, h3 { line-height: 1.2; font-weight: 650; }
+h1 { font-size: clamp(2.25rem, 5vw, 4rem); letter-spacing: -0.045em; margin: 0 0 1.5rem; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -0.025em; margin: 0 0 1rem; }
+h3 { font-size: 1.125rem; margin: 0 0 0.7rem; }
+p { margin: 0 0 1rem; }
+.hero { max-width: 56rem; padding-block: 5rem 4rem; }
+.eyebrow { font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 1.25rem; }
+.lead { font-size: 1.1875rem; color: var(--muted); max-width: 45rem; }
+.policy-links { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 1.75rem; margin-top: 2rem; }
+.button { display: inline-block; background: var(--accent); color: #fff; padding: 0.8rem 1.25rem; border-radius: 0.4rem; text-decoration: none; font-weight: 600; }
+.button:hover { background: #064b53; }
+.text-link { padding-block: 0.8rem; font-weight: 600; }
+.policy-links span { margin-left: 0.5rem; }
+.overview { border-top: 1px solid var(--line); padding-block: 2.5rem; }
+.features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 1.75rem; }
+.features p, .platform-note { color: var(--muted); }
+.gmail-panel { padding: clamp(1.5rem, 4vw, 3rem); background: var(--tint); border: 1px solid var(--line); border-radius: 0.75rem; }
+.gmail-panel p, .gmail-panel ul { max-width: 51rem; }
+ul { padding-left: 1.4rem; margin-block: 1rem; }
+li { margin-bottom: 0.65rem; }
+.platform-note { font-size: 0.9375rem; margin-block: 1.5rem 3rem; max-width: 52rem; }
+.site-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding-block: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9375rem; }
+.site-footer p { margin: 0; }
+.legal { max-width: 49rem; padding-block: 3.5rem; }
+.document-heading { padding-bottom: 1.75rem; border-bottom: 1px solid var(--line); }
+.legal h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); margin-bottom: 1rem; }
+.effective-date { color: var(--muted); margin-bottom: 0; }
+.legal section { margin-top: 2.5rem; }
+.legal h2 { font-size: 1.5rem; }
+.legal h3 { margin-top: 1.5rem; }
+code { font-size: 0.9375rem; overflow-wrap: anywhere; }
+.contact { padding: 1.5rem; background: var(--tint); border-radius: 0.5rem; }
+dl { margin-bottom: 0; }
+dt { font-size: 0.875rem; color: var(--muted); }
+dd { margin: 0.2rem 0 1rem; overflow-wrap: anywhere; }
+.placeholder { background: #fff0c2; color: #59420c; padding: 0.15rem 0.3rem; font-weight: 600; }
+.skip-link { position: absolute; left: 1rem; top: -6rem; padding: 0.7rem 1rem; background: #fff; z-index: 1; }
+.skip-link:focus { top: 0.5rem; }
+@media (max-width: 42rem) {
+  .wrap { width: calc(100% - 2rem); }
+  .site-header { flex-wrap: wrap; }
+  .hero { padding-block: 3rem; }
+  .features { grid-template-columns: 1fr; gap: 1rem; }
+  .legal { padding-block: 2.5rem; }
+  .site-footer { align-items: flex-start; flex-direction: column; }
+}
+@media print {
+  .skip-link, .site-header nav, .site-footer nav { display: none; }
+  .wrap { width: 100%; }
+  .legal { max-width: none; padding-block: 1rem; }
+  h2, h3 { break-after: avoid; }
+}
